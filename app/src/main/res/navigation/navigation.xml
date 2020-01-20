@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.recipehelper.logIn.LogInFragment"
+        android:label="LogInFragment" >
+        <action
+            android:id="@+id/action_logInFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_recipeViewPager"
+            app:destination="@id/recipeViewPager"
+            app:popUpTo="@+id/logInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.recipehelper.registration.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeViewPager"
+        android:name="com.example.recipehelper.recipes.RecipeViewPager"
+        android:label="RecipeViewPager" >
+        <action
+            android:id="@+id/action_recipeViewPager_to_allRecipes"
+            app:destination="@id/allRecipes" />
+        <action
+            android:id="@+id/action_recipeViewPager_to_detailedRecipe"
+            app:destination="@id/detailedRecipe" />
+        <action
+            android:id="@+id/action_recipeViewPager_to_savedRecipes"
+            app:destination="@id/savedRecipes" />
+        <action
+            android:id="@+id/action_recipeViewPager_to_detailedDatabaseRecipe"
+            app:destination="@id/detailedDatabaseRecipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/allRecipes"
+        android:name="com.example.recipehelper.recipes.AllRecipes"
+        android:label="AllRecipes" >
+        <action
+            android:id="@+id/action_allRecipes_to_detailedRecipe"
+            app:destination="@id/detailedRecipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedRecipes"
+        android:name="com.example.recipehelper.recipes.SavedRecipes"
+        android:label="SavedRecipes" >
+        <action
+            android:id="@+id/action_savedRecipes_to_detailedDatabaseRecipe"
+            app:destination="@id/detailedDatabaseRecipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedRecipe"
+        android:name="com.example.recipehelper.detailedRecipe.DetailedRecipe"
+        android:label="DetailedRecipe" >
+        <argument
+            android:name="recipe"
+            app:argType="com.example.recipehelper.network.Recipe" />
+        <action
+            android:id="@+id/action_detailedRecipe_to_savedRecipes"
+            app:destination="@id/savedRecipes" />
+        <action
+            android:id="@+id/action_detailedRecipe_to_recipeViewPager"
+            app:destination="@id/recipeViewPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedDatabaseRecipe"
+        android:name="com.example.recipehelper.detailedDatabaseRecipe.DetailedDatabaseRecipe"
+        android:label="DetailedDatabaseRecipe" >
+        <argument
+            android:name="recipe"
+            app:argType="com.example.recipehelper.database.DatabaseRecipe" />
+    </fragment>
+</navigation>

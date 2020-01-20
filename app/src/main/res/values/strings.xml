@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RecipeHelper</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="log_in">Log in</string>
+    <string name="done">Done</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="take_me_there">Take me there</string>
+    <string name="delete">Delete</string>
+</resources>

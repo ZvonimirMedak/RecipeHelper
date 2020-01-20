@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.recipehelper.detailedDatabaseRecipe.DetailedDatabaseRecipeViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/recipe_detail_image"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipe_name_text"
+            app:layout_constraintTop_toBottomOf="@id/recipe_detail_image"
+            android:text=""/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ingredients_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintTop_toBottomOf="@id/recipe_name_text"
+            app:layout_constraintBottom_toTopOf="@id/browser_opening_button"/>
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/delete"
+            android:id="@+id/save_recipe_button"/>
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/save_recipe_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="10dp"
+            android:text="@string/take_me_there"
+            android:id="@+id/browser_opening_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
